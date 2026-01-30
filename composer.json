@@ -1,0 +1,17 @@
+{
+  "name": "admin/lab_05mvc",
+  "autoload": {
+    "psr-4": {
+      "App\\": "app/"
+    }
+  },
+  "authors": [
+    {
+      "name": "Vu Truong Giang",
+      "email": "VTG@gmail.com"
+    }
+  ],
+  "require": {
+    "fakerphp/faker": "^1.24"
+  }
+}
