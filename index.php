@@ -10,11 +10,30 @@ $page = $_GET['page'] ?? 'home';
 if ($page === 'home') {
     $controller = new HomeController();
     $controller->index();
+    
 } elseif ($page === 'products') {
     $controller = new ProductController();
-    // Lưu ý: Đảm bảo trong ProductController bạn đặt tên hàm là index() hoặc list() cho đúng
+   
     $controller->index(); 
-} else {
+} elseif ($page === 'product-delete') { // THÊM NHÁNH NÀY
+    $controller = new ProductController();
+    $controller->delete(); 
+// index.php
+} elseif ($page === 'product-detail') {
+    $controller = new ProductController();
+    $controller->detail();
+}elseif ($page === 'product-add') {
+    $controller = new ProductController();
+    $controller->create();
+} elseif ($page === 'product-store') {
+    $controller = new ProductController();
+    $controller->store();
+}elseif ($page === 'edit') {
+    (new ProductController())->edit();
+} elseif ($page === 'product-update') {
+    (new ProductController())->update();
+}
+else {
     header("HTTP/1.0 404 Not Found");
     echo "<h1>404 - Không tìm thấy trang!</h1>";
 }

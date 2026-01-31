@@ -4,7 +4,7 @@ namespace App\Models;
 use PDO;
 use PDOException;
 
-class BaseModels {
+class BaseModel {
     protected $conn;
 
     public function __construct() {
